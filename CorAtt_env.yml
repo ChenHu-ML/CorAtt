@@ -1,4 +1,4 @@
-name: mAtt_env
+name: CorAtt
 channels:
   - pytorch
   - defaults
