@@ -1,5 +1,5 @@
 # README
-This repository is the official code for our IJCAI 2024 paper: "A Grassmannian Manifold Self-Attention Network for Signal Classification". [GDLNet](https://www.ijcai.org/proceedings/2024/0564.pdf)
+This repository is the official code for our IJCAI 2025 paper: "A Correlation Manifold Self-Attention Network for EEG Decoding". [CorAtt](https://www.ijcai.org/proceedings/2024/0564.pdf)
 
 If you have any problems, please don't hesitate to contact me.
 
@@ -7,8 +7,8 @@ If you have any problems, please don't hesitate to contact me.
 
 To install the necessary dependencies by conda, run the following command:
 ```setup
-conda env create -CorAtt.yml
-conda activate GDLNet
+conda env create CorAtt_env.yml
+conda activate CorAtt
 ```
 
 ## Dataset
@@ -33,13 +33,12 @@ python CorrAttBCI.py
 
 ## Reference
 ```bash
-@inproceedings{pan2022matt,
-  title={MAtt: a manifold attention network for EEG decoding},
-  author={Pan, Yue-Ting and Chou, Jing-Lun and Wei, Chun-Shu},
-  booktitle={Advances in Neural Information Processing Systems},
-  volume={35},
-  pages={31116--31129},
-  year={2022}
+@inproceedings{wang2024grassmannian,
+  title={A Grassmannian Manifold Self-Attention Network for Signal Classification},
+  author={Wang, Rui and Hu, Chen and Chen, Ziheng and Wu, Xiao-Jun and Song, Xiaoning},
+  booktitle={Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence},
+  pages={5099--5107},
+  year={2024}
 }
 ```
 
