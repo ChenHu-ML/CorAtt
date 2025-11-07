@@ -1,0 +1,30 @@
+# optim
+defaults:
+  - override hydra/launcher: joblib
+
+# Cor
+in_size: 15
+out_size: 15
+epochs: 7
+optim: 'adam'
+lr: 5e-3
+wd: 1e-1
+seed: 3407
+metric: 'mix'
+path: './checkpoint/mamem/'
+
+
+hydra:
+  run:
+    dir: outputs/bci/
+  sweep:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}/bci/
+    subdir: '.'
+  launcher:
+    _target_: hydra_plugins.hydra_joblib_launcher.joblib_launcher.JoblibLauncher
+    n_jobs: 16
+  job_logging:
+    handlers:
+      file:
+        class: logging.FileHandler
+        filename: default.log
