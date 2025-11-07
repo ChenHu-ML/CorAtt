@@ -33,7 +33,7 @@ python CorrAttBCI.py
 
 ## Reference
 ```bash
-@inproceedings{ijcai2025p598,
+@inproceedings{hu2025ijcai,
   title={A Correlation Manifold Self-Attention Network for EEG Decoding},
   author={Hu, Chen and Wang, Rui and Song, Xiaoning and Zhou, Tao and Wu, Xiao-Jun and Sebe, Nicu and Chen, Ziheng},
   booktitle={Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence, {IJCAI-25}},
