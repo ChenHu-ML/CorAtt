@@ -33,12 +33,12 @@ python CorrAttBCI.py
 
 ## Reference
 ```bash
-@inproceedings{wang2024grassmannian,
-  title={A Grassmannian Manifold Self-Attention Network for Signal Classification},
-  author={Wang, Rui and Hu, Chen and Chen, Ziheng and Wu, Xiao-Jun and Song, Xiaoning},
-  booktitle={Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence},
-  pages={5099--5107},
-  year={2024}
+@inproceedings{ijcai2025p598,
+  title={A Correlation Manifold Self-Attention Network for EEG Decoding},
+  author={Hu, Chen and Wang, Rui and Song, Xiaoning and Zhou, Tao and Wu, Xiao-Jun and Sebe, Nicu and Chen, Ziheng},
+  booktitle={Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence, {IJCAI-25}},
+  pages={5372--5380},
+  year={2025},
 }
 ```
 
