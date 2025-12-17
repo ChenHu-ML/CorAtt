@@ -18,12 +18,14 @@ conda activate CorAtt
 ## Dataset
 Please download the datasets and put them in the folder 'data'.
 
-1. MAMEM-SSVEP-II:
+1. BCIC-IV-2a:
+    https://www.bbci.de/competition/iv/
+2. MAMEM-SSVEP-II:
    https://www.mamem.eu/results/datasets/
-2. BCI-ERN:
+3. BCI-ERN:
     https://www.kaggle.com/competitions/inria-bci-challenge/data
 
-Link to download [data](https://drive.google.com/file/d/1RxN2PWOkYJw-NzyM0vaxdLkina2q-_Rj/view?usp=sharing)
+Link to download [data](https://drive.google.com/file/d/1RxN2PWOkYJw-NzyM0vaxdLkina2q-_Rj/view?usp=sharing). Please note that processed datasets provided by [MAtt](https://arxiv.org/pdf/2210.01986)
 
 ## Training and testing
 
