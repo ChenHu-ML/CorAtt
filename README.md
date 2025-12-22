@@ -41,7 +41,7 @@ python CorrAttBCI.py
 
 We encourage you to reproduce the results with different hyperparameter settings. When adapting the model to new tasks, we highlight several implementation details that we found to be particularly important.
 
-In [https://github.com/ChenHu-ML/CorAtt/blob/main/corAtt/CorAtt.py](https://github.com/ChenHu-ML/CorAtt/blob/main/corAtt/CorAtt.py)
+In [corAtt/CorAtt.py](https://github.com/ChenHu-ML/CorAtt/blob/main/corAtt/CorAtt.py)
 1. **The backpropagation of `spd_scaling_finder` in `CorrAttention.lsm_diffeo`.**
    We observed that allowing gradients to propagate through `spd_scaling_finder` does not lead to better performance. In our experiments, disabling backpropagation often yields more stable and better results. Therefore, we wrap this step with `with torch.no_grad()`. However, this behavior may be task-specific, and you can experiment with enabling or disabling gradient propagation.
 
