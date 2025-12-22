@@ -174,7 +174,7 @@ class Signal2Spd(nn.Module):
 
 class Signal2Cor(nn.Module):
     # convert signal epoch to SPD matrix
-    def __init__(self, power=1.0, device='cuda', tr_norm=True):
+    def __init__(self, device='cuda', tr_norm=True):
         super().__init__()
         self.device = device
         self.tr_norm = tr_norm
@@ -292,7 +292,7 @@ class CorrAttCha(nn.Module):
             nn.BatchNorm2d(args.in_size*args.epochs).to(self.device),
         )
 
-        self.ract1 = E2R(epochs=args.epochs, power=args.power, device=args.device, dim=1).to(self.device)
+        self.ract1 = E2R(epochs=args.epochs, device=args.device, dim=1).to(self.device)
         self.att2 = CorrAttention(args.in_size, args.out_size, args.epochs, args.metric, self.device)
         self.tangent = TrilEmbed(args.out_size, tril=True)
         self.flat = nn.Flatten()
