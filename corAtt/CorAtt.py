@@ -25,7 +25,7 @@ def hol_plus_finder(x, atol=1e-3, max_iter=100):
     d = torch.zeros_like(x, dtype=x.dtype) # setting d0
 
     for i in range(max_iter): # update rule: D_{k+1} = D_k - log(diag(exp(H + D_k)))
-        d_next = d - functions.sym_expm.apply(d + x).diagonal(dim1=-2, dim2=-1).log.diag_embed()
+        d_next = d - functions.sym_expm.apply(d + x).diagonal(dim1=-2, dim2=-1).log().diag_embed()
 
         if torch.norm(d_next - d, dim=(-2, -1)).max() < atol: return d_next # Check convergence
         d = d_next
@@ -69,7 +69,7 @@ class CorrAttention(nn.Module):
 
 
     def olm_diffeo_inv(self, x, atol=1e-3, max_iter=1):
-            return functions.sym_expm.apply(hol_plus_finder(x, atol=atol,max_iter=max_iter))
+            return functions.sym_expm.apply(x + hol_plus_finder(x, atol=atol,max_iter=max_iter))
     
 
     def lsm_diffeo(self, x, atol=1e-3, max_iter=1):
@@ -96,9 +96,9 @@ class CorrAttention(nn.Module):
             self.diffeo = self.lsm_diffeo
             self.diffeo_inv = self.lsm_diffeo_inv
         elif metric == "mix":
-            self.diffeo = self.lsm_diffeo
-            self.diffeo_inv = self.lsm_diffeo_inv
-            self.tangent_map = self.olm_diffeo
+            self.diffeo = self.olm_diffeo
+            self.diffeo_inv = self.olm_diffeo_inv
+            self.tangent_map = self.lsm_diffeo
 
         else:
             raise ValueError(f"Unsupported metric: {metric}")
