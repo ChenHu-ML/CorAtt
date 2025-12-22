@@ -143,7 +143,7 @@ class TrilEmbed(nn.Module):
             ixs_diag = torch.arange(start=0, end=ndim, dtype=torch.long)
             self.ixs = torch.cat((ixs_diag[None, :].tile((2, 1)), ixs_lower), dim=1)
         else:
-            self.ixs = torch.tril_indices(ndim, ndim, offset=-1)  # 只取下三角部分
+            self.ixs = torch.tril_indices(ndim, ndim, offset=-1)  # strictly lower triangular part
         self.ndim = ndim
 
     def forward(self, X: Tensor) -> Tensor:
