@@ -83,7 +83,7 @@ class CorrAttention(nn.Module):
     def lsm_diffeo_inv(self,x):
         cov = functions.sym_expm.apply(x)
         std = cov.diagonal(offset=0, dim1=-1, dim2=-2).sqrt().unsqueeze(-1)
-        return x / (std @ std.transpose(-1,-2))
+        return cov / (std @ std.transpose(-1,-2))
 
     
     def _set_metric(self, metric):
